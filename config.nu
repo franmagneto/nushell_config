@@ -1,4 +1,6 @@
+# Env
 $env.config.buffer_editor = "nvim"
+$env.BAT_THEME = "Catppuccin Mocha"
 
 mkdir ($nu.data-dir | path join "vendor/autoload")
 carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
