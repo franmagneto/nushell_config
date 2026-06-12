@@ -10,9 +10,9 @@ path add ($env.CARGO_HOME? | default ~/.cargo | path join "bin")
 if (which carapace | is-not-empty) {
   $env.CARAPACE_BRIDGES = 'bash'
   mkdir ($nu.data-dir | path join "vendor/autoload")
-  carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
+  ^carapace _carapace nushell | save -f ($nu.data-dir | path join "vendor/autoload/carapace.nu")
 }
 if (which starship | is-not-empty) {
   mkdir ($nu.data-dir | path join "vendor/autoload")
-  starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
+  ^starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 }

@@ -5,7 +5,7 @@ if (
   and 'LAPCE_LOG' not-in ($env | columns)
 ) {
   mut TMUXCMD = [tmux]
-  if (tmux ls e> /dev/null | lines | where $it !~ attached | is-not-empty) {
+  if (^tmux ls e> /dev/null | lines | where $it !~ attached | is-not-empty) {
     $TMUXCMD ++= [attach]
   }
   exec ...$TMUXCMD
