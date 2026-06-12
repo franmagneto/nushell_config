@@ -16,3 +16,7 @@ if (which starship | is-not-empty) {
   mkdir ($nu.data-dir | path join "vendor/autoload")
   ^starship init nu | save -f ($nu.data-dir | path join "vendor/autoload/starship.nu")
 }
+if (which mise | is-not-empty) {
+  mkdir ($nu.data-dir | path join "vendor/autoload")
+  ^mise activate nu | save -f ($nu.data-dir | path join "vendor/autoload/mise.nu")
+}
