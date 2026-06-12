@@ -1,6 +1,8 @@
-# Env
-$env.config.buffer_editor = "nvim"
+# Config
 $env.config.show_banner = false
+
+# Env
+$env.EDITOR = "nvim"
 
 # Path
 use std/util "path add"
