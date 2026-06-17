@@ -3,6 +3,12 @@ $env.config.show_banner = false
 
 # Env
 $env.EDITOR = "nvim"
+if ("/etc/locale.conf" | path exists) {
+  open /etc/locale.conf | lines
+  | parse "{key}={value}"
+  | transpose -rd
+  | load-env
+}
 
 # Path
 use std/util "path add"
