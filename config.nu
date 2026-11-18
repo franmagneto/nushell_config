@@ -7,6 +7,7 @@ if ("/etc/locale.conf" | path exists) {
   open /etc/locale.conf | lines
   | parse "{key}={value}"
   | transpose -rd
+  | each { str trim --char '"' }
   | load-env
 }
 
